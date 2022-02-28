@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Filter</title>
+  </head>
+  <body>
+    <input type="text" id="a1" onkeyup="fun()" />
+
+    <span id="msg"></span>
+    <script>
+    const emp=[{cname:'Oppo', price:'1234', pname:'mobile'},
+    {cname:'vivo', price:'10000', pname:'mobile'},
+    {cname:'Nokia', price:'12000', pname:'mobile'},
+    {cname:'samsung', price:'10000',pname:'mobile'},
+    {cname:'samsung', price:'12500', pname:'tv'},
+    {cname:'vivo', price:'20000', pname:'tv'},
+    {cname:'Sokia', price:'21000', pname:'tv'},
+    {cname:'samsung', price:'11000', pname:'mobile'},
+    {cname:'voltas', price:'23000', pname:'ac'},
+    {cname:'voltas', price:'350000', pname:'ac'},
+    {cname:'bluestar', price:'30000', pname:'ac'},
+    {cname:'bluestar', price:'31000', pname:'ac'},
+    {cname:'Oppo', price:'5000', pname:'mobile'},
+    {cname:'tiktok', price:'6000', pname:'led'},
+    {cname:'tiktok', price:'7000', pname:'led'},
+    {cname:'apple', price:'8000', pname:'led'},
+    ]
+      function fun() {
+        let tbl ="<table border='1' width = '500'><tr><th>name</th><th>price</th><th>pname</th></tr>";
+            var xx=document.getElementById("a1").value
+            {
+                var filterdata = emp.filter(function (getvalue) 
+          {
+            if (getvalue.cname.startsWith(xx))
+            {
+              return getvalue;
+            }
+          });
+          filterdata.forEach(function (get) {
+            tbl += `<tr><th>${get.cname}</th><th>${get.price}</th><th>${get.pname}</th></tr>`;
+          });
+          document.getElementById("msg").innerHTML = tbl;
+        };
+      }
+    </script>
+  </body>
+</html>
